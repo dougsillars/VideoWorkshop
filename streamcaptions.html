@@ -1,0 +1,36 @@
+<html><body>
+
+​
+
+<link href="https://unpkg.com/cloudinary-video-player@1.2.1/dist/cld-video-player.min.css" 
+
+ rel="stylesheet">
+
+<script src="https://unpkg.com/cloudinary-core@2.6.3/cloudinary-core-shrinkwrap.min.js" 
+
+   type="text/javascript"></script>
+
+<script src="https://unpkg.com/cloudinary-video-player@1.2.1/dist/cld-video-player.min.js" 
+
+   type="text/javascript"></script>
+<div style="max-width: 1080px">
+
+<video id="videoplayer" controls muted  autoplay class="cld-video-player">
+
+</video>
+<script>
+  var cld = cloudinary.Cloudinary.new({ cloud_name: "dougsillars", secure: true});
+  var player = cld.videoPlayer('videoplayer')
+  player.source('kidzania',{ sourceTypes: ['hls'], 
+                        transformation: { streaming_profile: 'hd' },
+                        textTracks: {
+                              captions: {
+                              label: 'English captions',
+                              language: 'en',
+                              default: true,
+                              url: 'https://res.cloudinary.com/dougsillars/raw/upload/l_text:Vollkorn_20/v1569001347/kidzania_doug1_c2jcpr.vtt'
+								}}}).play();
+
+</script>
+</div>
+</body></html>
