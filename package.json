@@ -1,0 +1,27 @@
+{
+  "name": "videoworkshop",
+  "version": "1.0.0",
+  "description": "upload videos to cloudinary with Nodjs",
+  "main": "videocaption.js",
+  "dependencies": {
+    "cloudinary": "^1.15.0",
+    "cloudinary-core": "^2.7.4",
+    "cloudinary-video-player": "^1.2.1",
+    "dotenv": "^8.1.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dougsillars/VideoWorkshop.git"
+  },
+  "author": "Doug Sillars",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dougsillars/VideoWorkshop/issues"
+  },
+  "homepage": "https://github.com/dougsillars/VideoWorkshop#readme"
+}
