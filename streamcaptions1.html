@@ -1,0 +1,55 @@
+<html><body>
+
+​
+
+<link href="https://unpkg.com/cloudinary-video-player@1.2.1/dist/cld-video-player.min.css" 
+
+ rel="stylesheet">
+
+<script src="https://unpkg.com/cloudinary-core@2.6.3/cloudinary-core-shrinkwrap.min.js" 
+
+   type="text/javascript"></script>
+
+<script src="https://unpkg.com/cloudinary-video-player@1.2.1/dist/cld-video-player.min.js" 
+
+   type="text/javascript"></script>
+<div style="max-width: 1080px">
+
+<video id="videoplayer" controls muted  autoplay class="cld-video-player">
+
+</video>
+<script>
+  var cld = cloudinary.Cloudinary.new({ cloud_name: "dougsillars", secure: true});
+  var player = cld.videoPlayer('videoplayer')
+  player.source('honerhomesazure',{ sourceTypes: ['hls'], 
+                        transformation: { streaming_profile: 'hd' },
+                        textTracks: {
+                              captions: {
+                              label: 'English captions',
+                              language: 'en',
+                              default: true,
+                              url: 'https://res.cloudinary.com/dougsillars/raw/upload/v1569062587/honerhomesazure.en-US.azure.vttt'
+								},
+							  captions: {
+                              label: 'French captions',
+                              language: 'fr',
+                              default: true,
+                              url: 'https://res.cloudinary.com/dougsillars/raw/upload/v1569062587/honerhomesazure.fr-FR.azure.vttt'
+								},
+								captions: {
+                              label: Spanish captions',
+                              language: 'es',
+                              default: true,
+                              url: 'https://res.cloudinary.com/dougsillars/raw/upload/v1569062587/honerhomesazure.es-ES.azure.vttt'
+								},
+									captions: {
+                              label: Chinese captions',
+                              language: 'zh',
+                              default: true,
+                              url: 'https://res.cloudinary.com/dougsillars/raw/upload/v1569062587/honerhomesazure.zh-Hant.azure.vttt'
+								}
+								}}).play();
+
+</script>
+</div>
+</body></html>
