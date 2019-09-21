@@ -6,10 +6,21 @@
     type="text/javascript"></script>
 
 <div style="max-width: 720px">
-<video id="doc-player"  controls  autoplay muted  class="cld-video-player cld-fluid">
-<source src="https://res.cloudinary.com/dougsillars/video/upload/sp_full_hd/v1562844756/earth_night_rotate_1080_1_vjbzy0.m3u8"/>
+<video
+  id="videoplayer"
+  controls muted
+  autoplay
+  class="cld-video-player">
+  <source src="https://res.cloudinary.com/dougsillars/video/upload/sp_full_hd/v1562844756/earth_night_rotate_1080_1_vjbzy0.m3u8"/>
 
 </video>
+
+<script>
+  var cld = cloudinary.Cloudinary.new({ cloud_name: "dougsillars", secure: true});
+  var demoplayer = cld.videoPlayer('videoplayer')
+  player.source('earth_night_rotate_1080_1_vjbzy0');
+
+</script>
 </div>
 
 
