@@ -17,7 +17,7 @@
    type="text/javascript"></script>
 <div style="max-width: 1080px">
 
-<video id="videoplayer" controls muted  autoplay class="cld-video-player">
+<video id="videoplayer" width="720" controls muted  autoplay class="cld-video-player">
 
 </video>
 <script>
@@ -26,24 +26,30 @@
   player.source('honerhomesazure',{ sourceTypes: ['hls'], 
                         transformation: { streaming_profile: 'hd' },
                         textTracks: {
-                              captions: {
+                              subtitles: [{
                               label: 'English captions',
                               language: 'en',
                               default:true,
                               url: 'https://res.cloudinary.com/dougsillars/raw/upload/v1569062587/honerhomesazure.en-US.azure.vtt'
 								},
-							  captions: {
+							   {
                               label: 'French captions',
                               language: 'fr',
                               
                               url: 'https://res.cloudinary.com/dougsillars/raw/upload/v1569062587/honerhomesazure.fr-FR.azure.vtt'
 								},
-								captions: {
+								 {
                               label: 'Spanish captions',
                               language: 'es',
                               
                               url: 'https://res.cloudinary.com/dougsillars/raw/upload/v1569062587/honerhomesazure.es-ES.azure.vtt'
-								}
+								},
+								 {
+                              label: 'Chinese captions',
+                              language: 'zh',
+                              
+                              url: 'https://res.cloudinary.com/dougsillars/raw/upload/v1569062587/honerhomesazure.zh-Hant.azure.vtt'
+								}]
 								}}).play();
 
 </script>
