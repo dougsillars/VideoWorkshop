@@ -1,0 +1,15 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=369000,RESOLUTION=416x234,CODECS="avc1.640029,mp4a.40.2"
+https://vialidadnacional-hls.mediainbox.net/17bfa45b-37af-4523-b01b-58d727483dbd/Consejos-de-una-Conduccion-Segura-hls-234p.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=977000,RESOLUTION=480x270,CODECS="avc1.640029,mp4a.40.2"
+https://vialidadnacional-hls.mediainbox.net/17bfa45b-37af-4523-b01b-58d727483dbd/Consejos-de-una-Conduccion-Segura-hls-270p.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1747000,RESOLUTION=640x360,CODECS="avc1.640029,mp4a.40.2"
+https://vialidadnacional-hls.mediainbox.net/17bfa45b-37af-4523-b01b-58d727483dbd/Consejos-de-una-Conduccion-Segura-hls-360p.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2851000,RESOLUTION=768x432,CODECS="avc1.640029,mp4a.40.2"
+https://vialidadnacional-hls.mediainbox.net/17bfa45b-37af-4523-b01b-58d727483dbd/Consejos-de-una-Conduccion-Segura-hls-432p.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=6051000,RESOLUTION=960x540,CODECS="avc1.640029,mp4a.40.2"
+https://vialidadnacional-hls.mediainbox.net/17bfa45b-37af-4523-b01b-58d727483dbd/Consejos-de-una-Conduccion-Segura-hls-540p.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=27160000,RESOLUTION=1280x720,CODECS="avc1.640029,mp4a.40.2"
+https://vialidadnacional-hls.mediainbox.net/17bfa45b-37af-4523-b01b-58d727483dbd/Consejos-de-una-Conduccion-Segura-hls-720p.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=37300000,RESOLUTION=1920x1080,CODECS="avc1.640029,mp4a.40.2"
+https://vialidadnacional-hls.mediainbox.net/17bfa45b-37af-4523-b01b-58d727483dbd/Consejos-de-una-Conduccion-Segura-hls-1080p.m3u8

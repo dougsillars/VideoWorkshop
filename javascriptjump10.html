@@ -1,0 +1,26 @@
+<html><body>
+<video id="my-video" width = "720" autoplay muted controls src = "https://res.cloudinary.com/dougsillars/video/upload/q_auto/v1562844864/rbsp_launch_720p_gz9zfm">
+</video>
+<div>
+<input id="forward" type="button" value="+10s" onclick="doFunction();" />
+<input id="backward" type="button" value="-10s" onclick="doFunction();" />
+</div>
+<style>
+body{
+background-color: blue;
+}
+</style>
+<script>
+    myVideo = document.getElementById('my-video');
+    document.getElementById("forward").onclick = function () { 
+    	var currentTime = myVideo.currentTime;
+    	myVideo.currentTime = currentTime +10;
+     };
+     document.getElementById("backward").onclick = function () { 
+    	var currentTime = myVideo.currentTime;
+    	myVideo.currentTime = currentTime -10;
+     };
+   
+</script>
+
+</body></html>

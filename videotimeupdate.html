@@ -1,0 +1,92 @@
+<html><body>
+<div id="video">
+	<video id="my-video" width = "720" autoplay controls src = "https://res.cloudinary.com/dougsillars/video/upload/q_auto/v1562844864/rbsp_launch_720p_gz9zfm">
+	</video>
+</div>
+<div id="svgdiv>">
+       <svg  id="svg" width = "1000" height = "100" class="chart">  
+        <rect width="1000" height="100" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <polyline id="polyline-red"
+          fill="none"
+          stroke="red"
+          stroke-width="10"
+          points=""/>
+        <polyline id="polyline-orange"
+          fill="none"
+          stroke="orange"
+          stroke-width="10"
+          points=""/>
+        <polyline id="polyline-green"
+          fill="none"
+          stroke="green"
+          stroke-width="10"
+          points=""/>
+       </svg>
+</div>
+<div id="displaybuffertime"></div>
+<style>
+
+</style>
+<script>
+    var duration= 0;
+    var counter =0;
+    var bufferTimer = 0;
+    myVideo = document.getElementById('my-video');
+    myVideo.addEventListener('canplay', canplay);
+    myVideo.addEventListener('timeupdate', statusUpdate);
+    
+    
+    function canplay(){
+       duration = myVideo.duration;
+    }
+	function statusUpdate(){
+		var bufferEnd = myVideo.buffered.end(myVideo.buffered.length - 1);
+        var videoCurrentTime = myVideo.currentTime;
+        
+        //volume sillyness
+        counter ++;
+        if(counter%16 ==0){
+            //every 4 seconds, change the volume and playback speed randomly.
+            var random = Math.random();
+        	myVideo.volume = random;
+        	myVideo.playbackRate = random*3;
+        }
+       var xlength = 1000/(duration*4);
+       //assume max buffer is 40s and 100 pixels high
+       var ylength = 100/40; 
+       //calculate time in buffer
+    
+       var timeInBuffer = (bufferEnd - videoCurrentTime).toFixed(2);
+       document.getElementById("displaybuffertime").innerHTML = timeInBuffer + "(s) of buffered video.";
+           
+	   //draw an SVG of the bvideo buffer state
+	    var svg = document.getElementById('svg');
+        var point = svg.createSVGPoint();
+        point.x = bufferTimer*xlength;
+        point.y = 100- timeInBuffer*ylength;
+        var polyline= document.getElementById('chart-polyline1');
+        // var stroke = svg.createSVGStroke();          
+        //increment the timer
+        bufferTimer +=1;
+        timeInBuffer = parseFloat(timeInBuffer);
+        //report back important stuff about buffertime
+            if (timeInBuffer < 10){
+       		if (timeInBuffer < 5){
+       			//I'll call this the danger zone
+       			polyline= document.getElementById('polyline-red');
+       		}else{
+       			//under 10 but over 5 - call this low buffer
+       			polyline= document.getElementById('polyline-orange');
+       		}
+       } else {
+       	  //over 10 probably ok
+       	  polyline= document.getElementById('polyline-green');
+       }
+       
+       polyline.points.appendItem(point); 
+	
+	} 
+	    
+</script>
+
+</body></html>

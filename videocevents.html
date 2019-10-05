@@ -1,0 +1,70 @@
+<html><body>
+<video id="my-video" width = "720" autoplay muted controls src = "https://res.cloudinary.com/dougsillars/video/upload/q_auto/v1562844864/rbsp_launch_720p_gz9zfm">
+</video>
+<div id="playback"></div>
+<style>
+body{
+background-color: blue;
+}
+</style>
+<script>
+    myVideo = document.getElementById('my-video');
+    myVideo.addEventListener('error', error);
+    myVideo.addEventListener('playing', playStart);
+    myVideo.addEventListener('pause', pause);
+    myVideo.addEventListener('waiting', waiting);
+    myVideo.addEventListener('stalled', stalled);
+    myVideo.addEventListener('emptied', emptied);
+    myVideo.addEventListener('ended', ended);
+    myVideo.addEventListener('canplay', canplay);
+    myVideo.addEventListener('canplaythrough', canplaythrough);
+   
+    function changeBackground(color) {
+    	  
+          document.body.style.backgroundColor = color;
+     }     
+     
+     function error(){
+       changeBackground("black");
+       console.log("error :(");
+     }
+     function playStart(){
+       changeBackground("green");
+       console.log("playing");
+     }
+     function pause(){
+       changeBackground("cyan");
+       console.log("paused");
+     }
+     function waiting(){
+       changeBackground("orange");
+       console.log("waiting");
+     }      
+     function stalled(){
+       changeBackground("red");
+       console.log("stall");
+     }          
+    function emptied(){
+       changeBackground("yellow");
+       console.log("mt");
+     }     
+    function ended(){
+       changeBackground("blue");
+       console.log("ended");
+     }
+    function seeking(){
+       changeBackground("purple");
+       console.log("ended");
+     }
+     
+     function canplay(){
+       document.getElementById("playback").innerHTML = "video can play";
+       console.log("can play");
+     }
+    function canplaythrough(){
+       document.getElementById("playback").innerHTML = "video can play to end";
+       console.log("can play through");
+     }
+</script>
+
+</body></html>

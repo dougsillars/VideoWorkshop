@@ -17,14 +17,17 @@ cloudinary.config({
 
 var video = process.argv[2];
 var id = "";
-if (process.argv[3].length >0){
+if (process.argv[3] != null ){
 	id = process.argv[3];
  }
 console.log( "** ** ** ** ** ** ** ** ** Uploads ** ** ** ** ** ** ** ** ** **");
 
 // File upload
 cloudinary.uploader.upload(process.argv[2], { resource_type: "video", public_id: id,  
-    raw_convert: "azure_video_indexer:vtt:en-US:fr-FR:es-ES:zh-Hant" },function(err,result){
+
+//add any language you'd like the captions translated to:
+//list of available languages: https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Index?&pattern=index
+    raw_convert: "azure_video_indexer:vtt:en-US:fr-FR:es-ES:zh-Hant:th-TH:he-IL:sw-KE" },function(err,result){
   console.log(result);
   console.log("** File Uploaded!");
   if (err){ console.warn(err);}
